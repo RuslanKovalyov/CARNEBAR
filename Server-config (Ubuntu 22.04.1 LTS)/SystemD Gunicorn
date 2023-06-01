@@ -1,0 +1,30 @@
+sudo nano /etc/systemd/system/restaurant_carnebar_web_app.service
+    [Unit]
+    Description = gunicorn daemon of restaurant carnebar django app
+    After = network.target
+    
+    [Service]
+    PermissionsStartOnly = true
+    User=ruslan
+    WorkingDirectory = /home/ruslan/Desktop/restaurant_carnebar
+    ExecStart= /home/ruslan/Desktop/restaurant_carnebar/venv/bin/python3 -m gunicorn --workers 2 restaurant_carnebar.wsgi:application --bind 0.0.0.0:8085
+    ExecReload=/bin/kill -s HUP $MAINPID
+    KillMode=mixed
+    TimeoutStopSec=5
+    PrivateTmp=true
+    Restart = on - failure
+    
+    [Install]
+    WantedBy = multi-user.target
+
+    
+source /home/ruslan/Desktop/restaurant_carnebar/venv/bin/activate
+pip install gunicorn
+deactivate
+
+sudo systemctl enable restaurant_carnebar_web_app.service
+sudo systemctl start restaurant_carnebar_web_app.service
+sudo systemctl status restaurant_carnebar_web_app.service
+
+sudo service nginx restart
+# sudo systemctl daemon-reload

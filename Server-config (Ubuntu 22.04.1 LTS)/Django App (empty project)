@@ -1,0 +1,68 @@
+cd /home/ruslan/Desktop
+
+# Python 3.10.6
+# sudo apt install python3.10-venv
+
+django-admin startproject restaurant_carnebar
+cd /restaurant_carnebar
+python3 -m venv venv
+source venv/bin/activate
+pip install django
+python3 -m django startapp main
+
+
+$sudo nano /home/ruslan/Desktop/restaurant_carnebar/restaurant_carnebar/settings.py
+
+    #add next:
+
+    from pathlib import Path
+    import os
+
+    DEBUG = False
+    
+    ALLOWED_HOSTS = ['localhost', 'carnebar.co.il', 'www.carnebar.co.il']
+    CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://carnebar.co.il', 'https://www.carnebar.co.il']
+    
+    INSTALLED_APPS = [
+        ...
+        ...
+        'main.apps.MainConfig',  
+    ]
+    
+    STATIC_URL = 'static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+
+$sudo nano main/views.py
+    from django.http import HttpResponse
+    
+    def homePageView(request):
+    html = "<html style='background-color: black; color: white; height: 100%; display: flex; align-items: center; justify-content: center;'><body><h1>CARNEBAR</h1></body></html>"
+    return HttpResponse(html)
+
+
+$sudo nano main/urls.py
+    from django.urls import path
+    from .views import homePageView
+    
+    urlpatterns = [
+        path("", homePageView, name="home"),
+    ]
+
+
+$sudo nano restaurant_carnebar/urls.py
+    from django.contrib import admin
+    from django.urls import path, include
+    
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path("", include("main.urls")),  
+    ]
+
+
+python3 manage.py collectstatic --noinput
+
+# Test
+python3 /home/ruslan/Desktop/restaurant_carnebar/manage.py runserver 8000
+C^
+deactivate

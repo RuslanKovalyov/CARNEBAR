@@ -1,0 +1,10 @@
+sudo certbot --nginx # for new domain
+sudo certbot renew --dry-run # for renew domain
+
+sudo nano /etc/nginx/sites-enabled/restaurant_carnebar
+    # change http to http2
+    listen 443 ssl http2;
+sudo nginx -t # test server conf
+
+# do not restart before Gunicorn is ready
+sudo service nginx restart

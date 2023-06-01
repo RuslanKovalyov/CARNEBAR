@@ -1,0 +1,38 @@
+# create a new server block configuration file in the /etc/nginx/sites-available directory
+$sudo nano /etc/nginx/sites-available/restaurant_carnebar
+      upstream server_restaurant_carnebar {
+        server 0.0.0.0:8085;
+      }
+
+      server {
+          listen 80;
+          server_name carnebar.co.il www.carnebar.co.il;
+
+          location /static {
+              autoindex off; # prevent directory listing of static files for increased security
+              alias /home/ruslan/Desktop/restaurant_carnebar/static;
+          }
+
+          # location /media {
+          #     autoindex off; # prevent directory listing of media files for increased security
+          #     alias /home/ruslan/Desktop/restaurant_carnebar/media;
+          # }
+
+          location / {
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header Host $host;
+              proxy_redirect off;
+              client_max_body_size 10m; # Max upload size
+              proxy_pass http://server_restaurant_carnebar;
+          }
+      }
+
+
+# create a symbolic link to the sites-enabled directory
+$sudo ln -s /etc/nginx/sites-available/restaurant_carnebar /etc/nginx/sites-enabled
+
+# check the syntax of your configuration files
+$sudo nginx -t
+
+# do not restart before Gunicorn is ready
+$sudo service nginx restart
