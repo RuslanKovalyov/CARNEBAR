@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTIYPE html>
+<html="he">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=yes,shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" type="text/css">
+    <title>CARNEBAR</title>
+</head>
+<body>
+  <div class="container">
+    <div class="typing">
+        <h1 id="typing-text"></h1><span class="cursor"></span>
+    </div>
+    <img src="{% static 'main/images/construction.jpg' %}" alt="Under Construction Image">
+    <p>This page is currently under development and will be available soon. Stay tuned!</p>
+  </div>
+
+    <script>
+      let initialMessage = "< CARNE BAR />";
+      let finalMessage = "< CARNEBAR />";
+      let container = document.getElementById("typing-text");
+      let index = 0;
+      let currentMessage = initialMessage;
+      let isDeleting = false;
+      let deleteStartIndex = initialMessage.indexOf(" BAR />");
+
+      function typeWriter() {
+          if (index < currentMessage.length && !isDeleting) {
+              container.innerHTML += currentMessage.charAt(index);
+              index++;
+              setTimeout(typeWriter, 200);
+          } else if (index === currentMessage.length && currentMessage === initialMessage) {
+              isDeleting = true;
+              index = currentMessage.length;
+              setTimeout(deleteText, 500);
+          } else if (currentMessage === finalMessage && index <= currentMessage.length) {
+              container.innerHTML += currentMessage.charAt(index);
+              index++;
+              setTimeout(typeWriter, 200);
+          }
+      }
+
+      function deleteText() {
+          if (index > deleteStartIndex && isDeleting) {
+              container.innerHTML = currentMessage.substring(0, index - 1);
+              index--;
+              setTimeout(deleteText, 100);
+          } else if (index === deleteStartIndex && isDeleting) {
+              isDeleting = false;
+              currentMessage = finalMessage;
+              index = deleteStartIndex;
+              typeWriter();
+          }
+      }
+
+      typeWriter();
+  </script>
+</body>
+</html>

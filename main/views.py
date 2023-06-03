@@ -1,5 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def homePageView(request):
-    html = "<html style='background-color: black; color: white; height: 100%; display: flex; align-items: center; justify-content: center;'><body><h1>CARNEBAR</h1></body></html>"
-    return HttpResponse(html)
+def index(request):
+    return render(request, 'main/index.html')

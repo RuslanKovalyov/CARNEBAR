@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# MacOS files
+.DS_Store
+
+# My files
+packages
+.gitignore
+
 # Django stuff:
 *.log
 static/admin/
