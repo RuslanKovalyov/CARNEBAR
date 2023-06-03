@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Django stuff:
+*.log
+static/admin/
+
 # Distribution / packaging
 .Python
 build/
