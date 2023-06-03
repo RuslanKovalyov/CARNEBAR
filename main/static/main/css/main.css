@@ -47,9 +47,9 @@ p {
 }
 
 img {
-    margin: 40px 0;
+    margin: 50px 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
 }
 
 /* Create a typing caret animation */
