@@ -1,0 +1,70 @@
+html {
+    background-color: rgb(255, 245, 215);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    color: rgb(100, 30, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.typing {
+    display: flex;
+}
+
+h1 {
+    display: inline;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    direction: ltr;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 0;
+    direction: rtl;
+}
+
+.cursor {
+    display: inline;
+    border-right: 4px solid rgb(100, 30, 0);  /* increased border-width to make cursor wider */
+
+    animation: caret 1s steps(1) infinite;
+}
+
+p {
+    font-size: 16px;
+    margin-inline: 20px;
+    max-width: 1200px;
+    direction: rtl;
+}
+
+img {
+    margin: 30px 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Create a typing caret animation */
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
