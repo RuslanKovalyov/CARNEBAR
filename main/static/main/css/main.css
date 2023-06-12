@@ -1,60 +1,164 @@
 html {
-    background-color: rgb(255, 245, 215);
+    scroll-behavior: smooth;
+    background-color: rgb(245, 240, 230);
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
-    color: rgb(100, 30, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-}
-
-.container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-}
-
-.typing {
-    display: flex;
-}
-
-h1 {
-    display: inline;
-    font-size: 36px;
-    white-space: nowrap;
-    overflow: hidden;
     margin: 0;
+    padding: 0;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    line-height: 1.5;
+    direction: rtl;
 }
 
-.cursor {
-    display: inline;
-    border-right: 4px solid rgb(100, 30, 0);  /* increased border-width to make cursor wider */
+/* *:focus {
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 2px #ccc;
+} */
 
-    animation: caret 1s steps(1) infinite;
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(90, 35, 30);
+    text-align: center; /* Center align headings */
 }
-
+  
 p {
+    text-align: justify; /* Justify-align paragraphs for a clean appearance */
+}
+  
+a {
+    color: rgb(150, 0, 0);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+  
+a:hover {
+    color: red;
+}
+
+header {
+    height: 34vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+}
+
+header img {
+    height: 38vh;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+header .logo {
+    /* Safari */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-bottom: 5px;
+    padding-top: 14vh;
+    padding-left: 3%;
+    z-index: 1;
+}
+
+header .logo h2,
+header .logo a {
+    color: #ffffff;
+    font-family: Georgia;
+    text-shadow: 3px 3px 2px rgb(20, 17, 17), 0 0 70px rgba(31, 8, 25, 0.74);
+    text-decoration: none;
+    line-height: 1;
+    direction: ltr;
+    text-align: left;
+}
+
+header .logo h2 {
+    font-size: 50px;
+}
+
+header .logo .slogan {
     font-size: 18px;
 }
 
-img {
-    margin: 50px 0;
-    width: 100%;
-    max-width: 300px;
+.main {
+    min-height: calc(100vh - 34vh);
+    background-color: rgb(245, 240, 230);
+    padding: 16px 16px;
+    margin: 0;
 }
 
-/* Create a typing caret animation */
-@keyframes caret {
-    50% {
-        border-color: transparent;
-    }
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    direction: ltr;
+}
+
+footer .main-footer {
+    /* background: linear-gradient(to bottom, #452b15, #000000); */
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+footer img.ico {
+    height: 32px;
+    width: 32px;
+    margin: 20px 8px;
+    vertical-align: middle;
+}
+
+footer .credits {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+footer .credits a {
+    color: rgb(255, 50, 50);
+    text-decoration: none;
+    transition: letter-spacing 0.3s ease; /* Add a smooth transition effect */
+}
+
+footer .credits a:hover {
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 600px) {
+header {
+    height: 20vh;
+}
+
+header .logo {
+    padding-top: 3vh;
+}
+
+header img {
+    height: 25vh;
+}
+
+header .logo h2 {
+    font-size: 40px;
+}
+    
+header .logo .slogan {
+    font-size: 16px;
+}
+.main {
+    min-height: calc(100vh - 20vh);
+}
 }

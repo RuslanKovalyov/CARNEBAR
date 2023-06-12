@@ -2,10 +2,12 @@
 <!DOCTYPE html>
 <html="he">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=yes,shrink-to-fit=no">
-    <link rel="stylesheet" href="{% static 'main/css/404.css' %}" type="text/css">
-    <title>CARNEBAR 404</title>
+    <meta name="theme-color" content="rgb(255, 245, 215)">
+    <title>CARNEBAR</title>
+    <link rel="stylesheet" href="{% static 'main/css/dev.css' %}" type="text/css">
 </head>
 <body>
   <div class="container">
@@ -13,25 +15,12 @@
         <h1 id="typing-text"></h1><span class="cursor"></span>
     </div>
     <img src="{% static 'main/images/construction.jpg' %}" alt="Under Construction Image">
-    <h2>עמוד לא נמצא</h2>
-    <p>
-        אופס! נראה שהעמוד שאתה מחפש לא קיים. ייתכן שזה קשור לשגיאה או שהעמוד נמצא בשלבי פיתוח כרגע.
-
-        אנו מתנצלים על התקלה הזו ואנחנו עובדים קשה כדי להביא לך את העמוד המבוקש בהקדם האפשרי.
-
-        בינתיים, אנא נסה לבדוק שוב מאוחר יותר או נווט למחזורות אחרות באתר שלנו. אנו מודים לך על ההבנה והסבלנות.
-
-        אנחנו מצפים לשתף אותך בעמוד הזה ברגע שיהיה מוכן.
-    </p>
-
-    <p>
-        <a href="{% url 'home' %}">לחזרה לדף הבית</a>
-    </p>
+    <p>This page is currently under development and will be available soon. Stay tuned!</p>
   </div>
 
     <script>
       let initialMessage = "< CARNE BAR />";
-      let finalMessage = "< CARNEBAR Page 404 />";
+      let finalMessage = "< CARNEBAR />";
       let container = document.getElementById("typing-text");
       let index = 0;
       let currentMessage = initialMessage;

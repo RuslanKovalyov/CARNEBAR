@@ -1,0 +1,55 @@
+{% load static %}
+<header>
+    <img src="{% static 'main/images/header_image.jpg' %}" alt="header image">
+    <div class="logo">
+        <h2><a href="{% url 'home' %}">CARNEBAR <br>
+                <span class="slogan">
+                    {% comment %} ARGENTINIAN GRILL {% endcomment %}
+                    <span id="typing-text"></span><span class="cursor"></span>
+                </span>
+                
+            </a>
+        </h2>
+    </div>
+</header>
+
+<script>
+    let initialMessage = "The Ultimate Argentinian Grill Experience!";
+    let finalMessage = "The Ultimate Argentinian Grill | Kosher";
+    let container = document.getElementById("typing-text");
+    let index = 0;
+    let currentMessage = initialMessage;
+    let isDeleting = false;
+    let deleteStartIndex = initialMessage.indexOf(" Experience!");
+
+    function typeWriter() {
+        if (index < currentMessage.length && !isDeleting) {
+            container.innerHTML += currentMessage.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100);
+        } else if (index === currentMessage.length && currentMessage === initialMessage) {
+            isDeleting = true;
+            index = currentMessage.length;
+            setTimeout(deleteText, 500);
+        } else if (currentMessage === finalMessage && index <= currentMessage.length) {
+            container.innerHTML += currentMessage.charAt(index);
+            index++;
+            setTimeout(typeWriter, 200);
+        }
+    }
+
+    function deleteText() {
+        if (index > deleteStartIndex && isDeleting) {
+            container.innerHTML = currentMessage.substring(0, index - 1);
+            index--;
+            setTimeout(deleteText, 100);
+        } else if (index === deleteStartIndex && isDeleting) {
+            isDeleting = false;
+            currentMessage = finalMessage;
+            index = deleteStartIndex;
+            typeWriter();
+        }
+    }
+
+    typeWriter();
+</script>
