@@ -5,6 +5,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    font-size: medium;
 }
   
 .navbar ul {
@@ -40,10 +41,14 @@
 
 /* Mobile navigation */
 @media screen and (max-width: 600px) {
+    .navbar{
+        font-size: larger;
+    }
     .navbar .openbtn {
         display: block;
         width: min-content;
         margin-right: 16px;
+        font-size: x-large;
     }
 
     .navbar .openbtn .ico-close{
@@ -82,6 +87,7 @@
         display: block;
         opacity: 0;
         transition: opacity 0.5s ease-out;
+        margin-top: 16px;
     }
 
     .navbar.active li {
