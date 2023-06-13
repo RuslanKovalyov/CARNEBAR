@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html="he">
+<head>
+    {% include 'main/modules/head_set.html' %}
+</head>
+<body>
+    {% include 'main/modules/header.html' %}
+    {% include 'main/modules/navbar.html' %}
+    <div class="main">
+        <section class="content" >
+
+            <div class="gallery_feed">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+                <img class="displayer" alt="Baby Buffalo" src="{% static 'main/images/i-st/construction.jpg' %}" loading="lazy">
+            </div>
+
+        </section>
+    </div>
+    {% include 'main/modules/image_displayer.html' %}
+    {% include 'main/modules/footer.html' %}
+</body>
+</html>

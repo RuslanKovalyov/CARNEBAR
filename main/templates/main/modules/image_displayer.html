@@ -1,0 +1,30 @@
+<div id="displaer" class="displaer">
+    <span class="displaer_close_btn">&times;</span>
+    <img class="displaer-content" id="displaer_bigimage">
+    <div id="displaer_bigimage_caption"></div>
+</div>
+
+<script>
+    var displaer = document.getElementById('displaer');
+    var images = document.getElementsByClassName('displayer');
+    var displaer_Img = document.getElementById("displaer_bigimage");
+    var captionText = document.getElementById("displaer_bigimage_caption");
+    
+    
+    for (var i = 0; i < images.length; i++) {
+    var img = images[i];
+    img.onclick = function(evt) {
+        console.log(evt);
+        displaer.style.display = "block";
+        displaer_Img.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    }
+    
+    {% comment %} var span = document.getElementsByClassName("displaer_close_btn")[0]; {% endcomment %}
+    var span = document.getElementsByClassName("displaer")[0];
+
+    span.onclick = function() {
+        displaer.style.display = "none";
+    }
+</script>
