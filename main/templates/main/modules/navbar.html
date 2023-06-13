@@ -1,0 +1,21 @@
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'contacts' as contact_url %}
+
+<nav class="navbar" id="navbar">
+  <span class="openbtn" onclick="dropMenu()">
+    <span class="ico-menu">תפריט&#9776;</span>
+    <span class="ico-close">&#10007;</span>
+  </span>
+  <ul>
+    <li><a href="{{ home_url }}" class="{% if request.path == home_url %}active{% endif %}">דף הבית</a></li>
+    <li><a href="https://wolt.com/en/isr/tel-aviv/restaurant/carnebar" target="_blank">להזמין</a></li>
+    <li><a href="{{ contact_url }}" class="{% if request.path == contact_url %}active{% endif %}">צור קשר</a></li>
+  </ul>
+</nav>
+
+<script>
+  function dropMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+  }
+</script>

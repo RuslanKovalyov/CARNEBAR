@@ -6,6 +6,9 @@ def dev(request):
 def index(request):
     return render(request, 'main/index.html')
 
+def contacts(request):
+    return render(request, 'main/contacts.html')
+
 def handler404(request, exception):
     return render(request, 'main/404.html', status=404)
     
