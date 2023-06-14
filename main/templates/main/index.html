@@ -9,15 +9,27 @@
     {% include 'main/modules/navbar.html' %}
     <div class="main">
         <section class="content" >
-            <h3>ARGENTINIAN GRILL</h3>
-            <p>
-                מסעדת "קרנה בר" מביעה לכם טעמים ארגנטינאים לא שיגרתים בעבודת יד, שניצל מילנזה (עגל), כריך אסאדו עסיסי, אמפנדס בשר או פטריות, צ'וריסוס בקר מעולה וגם פרגיות במרינדה, שניצל קריספי וקבבים מטורפים. יש גם מנות טבעוניות והכל באווירה דרום אמריקאית הכי אדיבה ושמחה שיש :)
-            </p>
+            <div class="gallery_feed">
+
+                
+                <img class="displayer" alt="אסאדו בג'בטה" src="{% static 'main/images/carnebar/crop-1170-830/18.124311.compressed.jpg' %}" loading="lazy">
+                <h3>ARGENTINIAN GRILL</h3>
+                <p>
+                    מסעדת "קרנה בר" מביעה לכם טעמים ארגנטינאים לא שיגרתים בעבודת יד, שניצל מילנזה (עגל), כריך אסאדו עסיסי, אמפנדס בשר או פטריות, צ'וריסוס בקר מעולה וגם פרגיות במרינדה, שניצל קריספי וקבבים מטורפים. יש גם מנות טבעוניות והכל באווירה דרום אמריקאית הכי אדיבה ושמחה שיש :)
+                </p>
+                <img class="displayer" alt="צ'וריסו צ'ורי - פן בג'בטה" src="{% static 'main/images/carnebar/crop-1170-830/18.124284.compressed.jpg' %}" loading="lazy">
+                <img class="displayer" alt="קרנה בורגר" src="{% static 'main/images/carnebar/crop-1170-830/18.124274.compressed.jpg' %}" loading="lazy">
+                <img class="displayer" alt="אמפנדס" src="{% static 'main/images/carnebar/crop-1170-830/18.124300.compressed.jpg' %}" loading="lazy">
+                <img class="displayer" alt="שניצל מילנזה בג'בטה" src="{% static 'main/images/carnebar/crop-1170-830/18.124282.compressed.jpg' %}" loading="lazy">
+                <img class="displayer" alt="אסאדו בצלחת" src="{% static 'main/images/carnebar/crop-1170-830/18.124275.compressed.jpg' %}" loading="lazy">
+                <img class="displayer" alt="CARNEBAR" src="{% static 'main/images/carnebar/crop-1170-830/logo.jpg' %}" loading="lazy">
+            </div>
 
             <iframe width="100%" height="300px" id="gmap_canvas" src="https://maps.google.com/maps?q=Sderot%20Yehudit%2027,%20Tel%20Aviv-Yafo&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 
         </section>
     </div>
+    {% include 'main/modules/image_displayer.html' %}
     {% include 'main/modules/footer.html' %}
 </body>
 </html>
