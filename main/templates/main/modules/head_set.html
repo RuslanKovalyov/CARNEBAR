@@ -7,7 +7,20 @@
 <link rel="stylesheet" href="{% static 'main/css/main.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'main/css/navbar.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'main/css/image_displayer.css' %}" type="text/css">
+
 <link rel="stylesheet" href="{% static 'main/css/accessible.css' %}" type="text/css">
+<style>
+  {% comment %} #Accessible BIG WHITE CURSOR {% endcomment %}
+  body.accessible-big-cursor-white,
+  body.accessible-big-cursor-white * {
+      cursor: url('{% static "accessibility-icons/big-cursor-white.png" %}') 10 0, auto !important;
+  }
+  {% comment %} #Accessible BIG BLACK CURSOR {% endcomment %}
+  body.accessible-big-cursor-black,
+  body.accessible-big-cursor-black * {
+      cursor: url('{% static "accessibility-icons/big-cursor-black.png" %}') 10 0, auto !important;
+  }
+</style>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PQP2TERQ3"></script>

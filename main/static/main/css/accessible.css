@@ -260,21 +260,10 @@ body.accessible-big-font * {
 }
 
 /*------------------------------------*\
-            #BIG WHITE CURSOR
+            #BIG CURSOR
 \*------------------------------------*/
-body.accessible-big-cursor-white,
-body.accessible-big-cursor-white * {
-    cursor: url(/static/accessibility-icons/big-cursor-white.png) 10 0, auto !important;
-}
+/* in head_set.html because of dinamic ico url */ 
 
-/*------------------------------------*\
-            #BIG BLACK CURSOR
-\*------------------------------------*/
-body.accessible-big-cursor-black,
-body.accessible-big-cursor-black * {
-    /* fix x-asix to to 20px left */
-    cursor: url(/static/accessibility-icons/big-cursor-black.png) 10 0, auto !important;
-}
 
 /*------------------------------------*\
             #HIGHLIGHT TITLE
