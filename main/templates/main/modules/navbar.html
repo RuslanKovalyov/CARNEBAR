@@ -4,7 +4,7 @@
 {% url 'contacts' as contact_url %}
 
 <nav class="navbar" id="navbar">
-  <span class="openbtn" onclick="dropMenu()">
+  <span tabindex="0" id="openbtn" class="openbtn" onclick="dropMenu()">
     <span class="ico-menu">תפריט&#9776;</span>
     <span class="ico-close">&#10007;</span>
   </span>
@@ -17,6 +17,14 @@
 </nav>
 
 <script>
+  // accessibility for keyboard (pressable with section for dropMenu)
+  var openbtn = document.getElementById('openbtn');
+  openbtn.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      openbtn.click();
+    }
+  });
+
   function dropMenu() {
     document.getElementById("navbar").classList.toggle("active");
   }
