@@ -26,10 +26,14 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(90, 35, 30);
     text-align: center; /* Center align headings */
     width: 100%;
+    font-size: x-large;
+    margin-bottom: 10px;
 }
   
 p {
     text-align: justify; /* Justify-align paragraphs for a clean appearance */
+    font-size: large;
+
 }
   
 a {
@@ -88,7 +92,8 @@ header .logo .slogan {
 
 .main {
     min-height: calc(100vh - 34vh);
-    background-color: rgb(245, 240, 230);
+    /* background-color: rgb(245, 240, 230); */
+    background-color: rgb(255, 250, 225);
     padding: 16px 16px;
     margin: 0;
 }
@@ -113,7 +118,7 @@ header .logo .slogan {
     margin: 0;
     padding: 0;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
 }
@@ -122,8 +127,14 @@ header .logo .slogan {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+}
+
+.logo_border_img {
+    border: #6a0000 5px solid;
+    max-width: calc(100% - 10px);
+
 }
 
 .map_block {
